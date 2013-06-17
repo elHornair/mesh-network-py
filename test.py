@@ -38,13 +38,14 @@ class MeshNode(object):
       elif self.is_sink:
         command += [ '-z' ]
 
+
       env=None
       if be_verbose: env={"BE_VERBOSE": "1"}
 
       if self.is_source:
-        self.proc = subprocess.Popen( command, env=env, stdin =subprocess.PIPE )
+        self.proc = subprocess.Popen( command, env=env, stdin=subprocess.PIPE )
       elif self.is_sink:
-        self.proc = subprocess.Popen( command, env=env, stdout=subprocess.PIPE )
+        self.proc = subprocess.Popen( command, env=env, stdin=subprocess.PIPE )
       else:
         self.proc = subprocess.Popen( command, env=env )
 
