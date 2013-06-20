@@ -159,7 +159,7 @@ if __name__ == '__main__':
 
   nodes_all = nodes_source + nodes_sink + nodes_intermediate
 
-  sleeptime = len(nodes_all)/10 + 1
+  sleeptime = len(nodes_all)/100 + 1
   dbg("warte auf Start der Knoten: " + str(sleeptime) + "s")
   time.sleep(sleeptime)
 
