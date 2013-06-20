@@ -4,6 +4,7 @@ import argparse
 import socket
 import struct
 import sys
+import random
 
 be_verbose = False
 
@@ -29,7 +30,7 @@ def send_data_packet(s, target, packet_nr):
     d = s.recv(132)
 
 def pipe(s, target):
-    packet_nr = 0
+    packet_nr = random.randint(1, 25500)
     while True:
         data = sys.stdin.read(128)
         if data == "":
